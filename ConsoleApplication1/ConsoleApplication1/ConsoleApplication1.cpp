@@ -13,11 +13,13 @@ int main()
 {
 	int iUserNum;
 	int iComputerNum;
+	int iGuessCounter = 0;
 	bool bWinState = false;
 
 	srand(time(NULL));
 
-	iComputerNum = rand() % 100 + 1;
+	iComputerNum = rand() % 1000 + 1;
+
 
 	do
 	{
@@ -26,24 +28,31 @@ int main()
 
 		if (iUserNum > iComputerNum)
 		{
-			cout << "Lower..." << endl;
+			iGuessCounter++;
+			cout << "Lower..." << endl << endl;
+			cout << "Guesses = " << iGuessCounter << endl << endl;
+			
 		}
 		else if (iUserNum < iComputerNum)
 		{
-			cout << "Higher..." << endl;
+			iGuessCounter++;
+			cout << "Higher..." << endl << endl;
+			cout << "Guesses = " << iGuessCounter << endl << endl;
+			
 		}
 		else if (iUserNum = iComputerNum)
 		{
-			cout << "Congratulation :^)" << endl;
+			iGuessCounter++;
+			cout << "Congratulation :^)" << endl << endl; 
+			cout << "Guesses = " << iGuessCounter << endl << endl;
+			
 
 			bWinState = true;
 		}
-		
+
 	} while (bWinState == false);
 	
-
-		
-	
+	system("pause");
 
     return 0;
 }
